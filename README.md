@@ -1,6 +1,5 @@
 # Sam LaFell | Data Engineer Portfolio
 
-A minimal, elegant personal portfolio inspired by [Brittany Chiang's portfolio](https://brittanychiang.com/). Built with Next.js, TypeScript, TailwindCSS, and Framer Motion.
 
 ## Design Philosophy
 
