@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sam LaFell | Data Engineer Portfolio
+
+A minimal, elegant personal portfolio inspired by [Brittany Chiang's portfolio](https://brittanychiang.com/). Built with Next.js, TypeScript, TailwindCSS, and Framer Motion.
+
+## Design Philosophy
+
+- **Clean & Minimal** - No heavy cards or borders, content breathes
+- **Two-Column Layout** - Sticky sidebar on left, scrolling content on right
+- **Mouse-Follow Spotlight** - Subtle gradient that follows your cursor
+- **Typography-First** - Content hierarchy through text weight and color
+- **Inline Tech Tags** - Unobtrusive teal badges for technologies
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Geist Sans & Geist Mono
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout with fonts, metadata
+│   ├── page.tsx        # Main page with spotlight effect
+│   └── globals.css     # Theme colors and utility classes
+├── components/
+│   ├── layout/
+│   │   └── Sidebar.tsx # Sticky left sidebar (name, nav, socials)
+│   └── sections/
+│       ├── About.tsx   # Bio paragraphs
+│       ├── Experience.tsx # Work history with achievements
+│       └── Projects.tsx   # Featured projects
+├── data/
+│   └── content.ts      # All portfolio content (edit this!)
+├── hooks/
+│   └── useScrollSpy.ts # Active section detection
+└── lib/
+    ├── types.ts        # TypeScript interfaces
+    └── utils.ts        # Helper functions
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Update Your Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit `src/data/content.ts` to update:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Profile**: Name, tagline, location
+- **Socials**: GitHub, LinkedIn, email
+- **About**: Bio paragraphs
+- **Experience**: Jobs with achievements and tech stacks
+- **Projects**: Featured work with impact metrics
 
-## Deploy on Vercel
+### 2. Color Palette
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The design uses a deep slate blue palette. Edit `src/app/globals.css`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```css
+:root {
+  --background: #0f172a;      /* Deep slate blue */
+  --text-primary: #e2e8f0;    /* Light slate */
+  --text-secondary: #94a3b8;  /* Medium slate */
+  --text-muted: #64748b;      /* Muted slate */
+  --accent: #5eead4;          /* Teal accent */
+}
+```
+
+### 3. Sections
+
+The portfolio currently shows:
+- **About** - Your bio
+- **Experience** - Work history with metrics and tech tags
+- **Projects** - Featured projects with impact
+
+You can add more sections by creating new components in `src/components/sections/`.
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Import on [Vercel](https://vercel.com)
+3. Deploy with default settings
+
+## Credits
+
+Design inspired by [Brittany Chiang](https://brittanychiang.com/)
+
+Built with:
+- [Next.js](https://nextjs.org)
+- [TailwindCSS](https://tailwindcss.com)
+- [Framer Motion](https://www.framer.com/motion)
+- [Lucide Icons](https://lucide.dev)
+- [Geist Font](https://vercel.com/font)
